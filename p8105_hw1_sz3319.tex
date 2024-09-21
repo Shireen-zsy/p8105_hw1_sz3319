@@ -1,0 +1,357 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={p8105\_hw1\_sz3319},
+  pdfauthor={Shiyu Zhang},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{p8105\_hw1\_sz3319}
+\author{Shiyu Zhang}
+\date{2024-09-21}
+
+\begin{document}
+\maketitle
+
+\subsection{Library Packages for
+Coding}\label{library-packages-for-coding}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Library necessary packages}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Problem 1}\label{problem-1}
+
+\subsubsection{a) Load the Dataset}\label{a-load-the-dataset}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load "penguins" dataset}
+\FunctionTok{library}\NormalTok{(palmerpenguins)}
+\FunctionTok{data}\NormalTok{(}\StringTok{"penguins"}\NormalTok{, }\AttributeTok{package =} \StringTok{"palmerpenguins"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{\texorpdfstring{b) Describe \textbf{penguins}
+Dataset}{b) Describe penguins Dataset}}\label{b-describe-penguins-dataset}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Look at data}
+\FunctionTok{tail}\NormalTok{(penguins, }\DecValTok{5}\NormalTok{)}
+\NormalTok{skimr}\SpecialCharTok{::}\FunctionTok{skim}\NormalTok{(penguins)}
+\end{Highlighting}
+\end{Shaded}
+
+The \textbf{penguins} dataset contains data on \textbf{344} observations
+and \textbf{8} variables. The mean of flipper length is NA The
+\textbf{8} important variables are: \textbf{species, island,
+bill\_length\_mm, bill\_depth\_mm, flipper\_length\_mm, body\_mass\_g,
+sex, year}. It includes following \textbf{8} important variables:
+species, island, bill\_length\_mm, bill\_depth\_mm, flipper\_length\_mm,
+body\_mass\_g, sex, year.
+
+\subsubsection{c) Creat and Save a
+Scatterplot}\label{c-creat-and-save-a-scatterplot}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ bill\_length\_mm, }\AttributeTok{y =}\NormalTok{ flipper\_length\_mm, }\AttributeTok{color =}\NormalTok{ species)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Flipper Length vs Bill Length in Different Species of Penguins"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Bill Length (mm)"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Flipper Length (mm)"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{p8105_hw1_sz3319_files/figure-latex/scatterplot-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggsave}\NormalTok{(}\StringTok{"penguins\_scatter\_plot.pdf"}\NormalTok{, }\AttributeTok{height =} \DecValTok{4}\NormalTok{, }\AttributeTok{width =} \DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Problem 2}\label{problem-2}
+
+\subsubsection{a) Create the Data}\label{a-create-the-data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# For reproducibility}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1234}\NormalTok{)}
+
+\CommentTok{\# a random sample of size 10 from a standard Normal distribution}
+\NormalTok{normal\_sample }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{10}\NormalTok{)}
+
+\CommentTok{\# a logical vector indicating whether elements of the sample are greater than 0}
+\NormalTok{logical\_vector }\OtherTok{\textless{}{-}}\NormalTok{ normal\_sample }\SpecialCharTok{\textgreater{}} \DecValTok{0}
+
+\CommentTok{\# a character vector of length 10}
+\NormalTok{character\_vector }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(letters, }\DecValTok{10}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{)}
+
+\CommentTok{\# a factor vector of length 10, with 3 different factor “levels”}
+\NormalTok{factor\_vector }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(}\FunctionTok{sample}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"A"}\NormalTok{, }\StringTok{"B"}\NormalTok{, }\StringTok{"C"}\NormalTok{), }\DecValTok{10}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{b) Create a Data Frame}\label{b-create-a-data-frame}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# create data frame "df"}
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}
+  \AttributeTok{normal =}\NormalTok{ normal\_sample,}
+  \AttributeTok{logical =}\NormalTok{ logical\_vector,}
+  \AttributeTok{character =}\NormalTok{ character\_vector,}
+  \AttributeTok{factor =}\NormalTok{ factor\_vector}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{c) Calculate the mean of different
+variables}\label{c-calculate-the-mean-of-different-variables}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# calculate the mean of normal sample}
+\NormalTok{mean\_normal }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(}\FunctionTok{pull}\NormalTok{(df, normal))}
+\NormalTok{mean\_normal}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -0.3831574
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#calculate the mean of }
+\NormalTok{mean\_logical }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(}\FunctionTok{pull}\NormalTok{(df, logical))}
+\NormalTok{mean\_logical}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#calculate the mean of }
+\NormalTok{mean\_character }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(}\FunctionTok{pull}\NormalTok{(df, character))}
+\NormalTok{mean\_character}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#calculate the mean of }
+\NormalTok{mean\_factor }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(}\FunctionTok{pull}\NormalTok{(df, factor))}
+\NormalTok{mean\_factor}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA
+\end{verbatim}
+
+The result shows that:
+
+\begin{itemize}
+\tightlist
+\item
+  The mean of the \textbf{normal sample} is -0.3831574.
+\item
+  The mean of \textbf{logical vectors} is 0.4, for the \texttt{TRUE} is
+  \texttt{1} and \texttt{FALSE} is \texttt{0}.
+\item
+  The mean of characters and factors can't be calculated for they are
+  not numeric data.
+\end{itemize}
+
+\subsubsection{d) Convert Variables}\label{d-convert-variables}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Convert logical to numeric}
+\NormalTok{logi\_num }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{pull}\NormalTok{(df, logical))}
+\NormalTok{logi\_num}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 0 1 1 0 1 1 0 0 0 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Convert character to numeric}
+\NormalTok{cha\_num }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{pull}\NormalTok{(df, character))}
+\NormalTok{cha\_num}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] NA NA NA NA NA NA NA NA NA NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Convert factor to numeric}
+\NormalTok{fac\_num }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{pull}\NormalTok{(df, factor))}
+\NormalTok{fac\_num}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 3 3 1 2 1 2 2 3 3 3
+\end{verbatim}
+
+The result shows that:
+
+\begin{itemize}
+\tightlist
+\item
+  The character variable \textbf{cannot} be changed into numeric
+  variable, and the output are \texttt{NA}s.
+\item
+  The factor variable can be changed in to numeric variable. The
+  \texttt{A}, \texttt{B}, \texttt{C} are converted into \texttt{1},
+  \texttt{2}, \texttt{3}. However, they only randomly convert into
+  numbers, so they may not be the real \texttt{Level}.
+\end{itemize}
+
+\subsubsection{The result explains
+that:}\label{the-result-explains-that}
+
+\begin{itemize}
+\tightlist
+\item
+  The reason of the failure of calculating the mean for character and
+  factor.
+\item
+  The mean of logical vectors can be calculated. When use
+  \texttt{as.numeric()}, \texttt{TRUE} will be converted to 1,
+  \texttt{FALSE} will be converted to 0. As a result, the mean can be
+  calculated.
+\item
+  For the character variable, when using \texttt{as.numeric()}, all
+  elements will return as \texttt{NA}, so there is no meaningful numeric
+  values.
+\item
+  The factor variable can converted to numeric variable, but the numbers
+  are only \textbf{code}s, not numbers.
+\end{itemize}
+
+\end{document}

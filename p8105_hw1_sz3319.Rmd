@@ -2,7 +2,8 @@
 title: "p8105_hw1_sz3319"
 author: "Shiyu Zhang"
 date: "2024-09-21"
-output: html_document
+output:
+  html_document: default
 
 ---
 
@@ -33,7 +34,14 @@ tail(penguins, 5)
 skimr::skim(penguins)
 ```
 
-The `penguins` dataset contains data on 
+The **penguins** dataset contains data on **`r nrow(penguins)`** observations and **`r ncol(penguins)`** variables. 
+
+The mean of flipper length is **`r mean(pull(penguins,flipper_length_mm), na.rm = TRUE)`**.
+
+The **`r ncol(penguins)`** important variables are: **`r names(penguins)`**:
+
+* There are **3** factor variables(species, island, sex);
+* and **5** numeric variables(bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, year).
 
 
 ### c) Creat and Save a Scatterplot
