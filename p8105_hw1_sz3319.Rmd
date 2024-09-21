@@ -3,9 +3,12 @@ title: "p8105_hw1_sz3319"
 author: "Shiyu Zhang"
 date: "2024-09-21"
 output: html_document
+
 ---
 
+
 ## Library Packages for Coding
+
 ```{r library package, warning = FALSE, message = FALSE}
 # Library necessary packages
 library(ggplot2)
@@ -50,5 +53,38 @@ ggsave("penguins_scatter_plot.pdf", height = 4, width = 6)
 ```
 
 
+## Problem 2
+
+### a) Create the Data
+
+```{r data}
+# For reproducibility
+set.seed(1234)
+
+# a random sample of size 10 from a standard Normal distribution
+normal_sample <- rnorm(10)
+
+# a logical vector indicating whether elements of the sample are greater than 0
+logical_vector <- normal_sample > 0
+
+# a character vector of length 10
+character_vector <- sample(letters, 10, replace = TRUE)
+
+# a factor vector of length 10, with 3 different factor “levels”
+factor_vector <- factor(sample(c("A", "B", "C"), 10, replace = TRUE))
+```
+
+
+### b) Create a Data Frame
+
+```{r df}
+# create dataframe "df"
+df <- tibble(
+  normal = normal_sample,
+  logical = logical_vector,
+  character = character_vector,
+  factor = factor_vector
+)
+```
 
 
