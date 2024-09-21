@@ -11,3 +11,44 @@ output: html_document
 library(ggplot2)
 library(tidyverse)
 ```
+
+## Problem 1
+
+### a) Load the Dataset
+
+```{r setup and data load, warning = FALSE, message = FALSE}
+# Load "penguins" dataset
+library(palmerpenguins)
+data("penguins", package = "palmerpenguins")
+```
+
+### b) Describe **penguins** Dataset
+
+```{r, message = FALSE, results = 'hide'}
+# Look at data
+tail(penguins, 5)
+skimr::skim(penguins)
+```
+
+The `penguins` dataset contains data on 
+
+
+### c) Creat and Save a Scatterplot
+
+```{r scatterplot, echo = TRUE}
+library(ggplot2)
+ggplot(data = penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+  geom_point(na.rm = TRUE) +
+  labs(title = "Flipper Length vs Bill Length in Different Species of Penguins",
+       x = "Bill Length (mm)",
+       y = "Flipper Length (mm)") +
+  theme_minimal()
+```
+
+```{r save plot}
+ggsave("penguins_scatter_plot.pdf", height = 4, width = 6)
+```
+
+
+
+
