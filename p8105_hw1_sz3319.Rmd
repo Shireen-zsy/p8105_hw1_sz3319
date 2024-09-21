@@ -78,7 +78,7 @@ factor_vector <- factor(sample(c("A", "B", "C"), 10, replace = TRUE))
 ### b) Create a Data Frame
 
 ```{r df}
-# create dataframe "df"
+# create data frame "df"
 df <- tibble(
   normal = normal_sample,
   logical = logical_vector,
@@ -86,5 +86,33 @@ df <- tibble(
   factor = factor_vector
 )
 ```
+
+### c) Calculate the mean of different variables
+
+```{r calculate_means, warning = FALSE, message = FALSE}
+# calculate the mean of normal sample
+mean_normal <- mean(pull(df, normal))
+mean_normal
+
+#calculate the mean of 
+mean_logical <- mean(pull(df, logical))
+mean_logical
+
+#calculate the mean of 
+mean_character <- mean(pull(df, character))
+mean_character
+
+#calculate the mean of 
+mean_factor <- mean(pull(df, factor))
+mean_factor
+```
+
+The result shows that:
+
+* The mean of the **normal sample** is `r mean(pull(df, normal))`.
+* The mean of **logical vectors** is `r mean(pull(df, logical))`, for the `TRUE` is `1` and `FALSE` is `0`.
+* The mean of characters and factors can't be calculated for they are not numeric data.
+
+
 
 
