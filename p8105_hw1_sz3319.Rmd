@@ -113,6 +113,33 @@ The result shows that:
 * The mean of **logical vectors** is `r mean(pull(df, logical))`, for the `TRUE` is `1` and `FALSE` is `0`.
 * The mean of characters and factors can't be calculated for they are not numeric data.
 
+### d) Convert Variables
 
+```{r convert, warning = FALSE, message = FALSE}
+# Convert logical to numeric
+logi_num <- as.numeric(pull(df, logical))
+logi_num
+
+# Convert character to numeric
+cha_num <- as.numeric(pull(df, character))
+cha_num
+
+# Convert factor to numeric
+fac_num <- as.numeric(pull(df, factor))
+fac_num
+```
+
+The result shows that:
+
+* The character variable **cannot** be changed into numeric variable, and the output are `NA`s.
+* The factor variable can be changed in to numeric variable. The `A`, `B`, `C` are converted into 
+`1`, `2`, `3`. However, they only randomly convert into numbers, so they may not be the real `Level`.
+
+### The result explains that:
+
+* The reason of the failure of calculating the mean for character and factor.
+* The mean of logical vectors can be calculated. When use `as.numeric()`, `TRUE` will be converted to 1, `FALSE` will be converted to 0. As a result, the mean can be calculated.
+* For the character variable, when using `as.numeric()`, all elements will return as `NA`, so there is no meaningful numeric values.
+* The factor variable can converted to numeric variable, but the numbers are only **code**s, not numbers.
 
 
