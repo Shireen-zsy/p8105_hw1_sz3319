@@ -1,0 +1,13 @@
+---
+title: "p8105_hw1_sz3319"
+author: "Shiyu Zhang"
+date: "2024-09-21"
+output: html_document
+---
+
+## Library Packages for Coding
+```{r library package, warning = FALSE, message = FALSE}
+# Library necessary packages
+library(ggplot2)
+library(tidyverse)
+```
